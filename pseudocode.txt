@@ -1,0 +1,53 @@
+PROGRAM sistem_kasir_minimarket
+
+START
+READ AND WRITE "kodeItem" with string
+READ AND WRITE "jumlahItem" with number
+READ AND WRITE "totalHarga" with number
+READ AND WRITE "hargaDiskon" with number
+READ AND WRITE "statusMember" with string
+READ AND WRITE "noMember" with string
+
+PRINT "Masukkan Kode Item: "
+INPUT "kodeItem"
+PRINT "Masukkan Jumlah Item :
+INPUT "jumlahItem"
+
+IF "kodeItem" equals "sapu"
+  STORE "totalHarga" with "jumlahItem" times 20000
+ELSE
+  STORE "totalHarga" with "jumlahItem" times 25000
+ENDIF
+
+
+PRINT "Apakah status customer Member atau Non-Member?"
+INPUT "statusMember"
+
+IF "statusMember" equals "Member"
+  PRINT "Masukkan Nomor Member : "
+  INPUT "noMember"
+  STORE "hargaDiskon" with "totalHarga" times 0.90
+
+  PRINT "STRUK PEMBAYARAN"
+
+  PRINT "Nomor Member : " + "noMember"
+
+  PRINT "Kode Item : " + "kodeItem"
+
+  PRINT "Total Item : " + "jumlahItem"
+
+  PRINT "Total Harga (Diskon 10%) : " + "hargaDiskon"
+
+ELSE
+  PRINT "STRUK PEMBAYARAN"
+
+  PRINT "Status : Non-Member"
+
+  PRINT "Kode Item : " + "kodeItem"
+
+  PRINT "Total Item : " + "jumlahItem"
+
+  PRINT "Total Harga : " + "totalHarga"
+ENDIF
+
+END
